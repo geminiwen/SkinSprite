@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 /**
  * Created by geminiwen on 16/6/15.
  */
-public class SkinnableTextView extends AppCompatTextView {
+public class SkinnableTextView extends AppCompatTextView implements Skinnable {
 
     private AttributeSet mAttributeSet;
 
