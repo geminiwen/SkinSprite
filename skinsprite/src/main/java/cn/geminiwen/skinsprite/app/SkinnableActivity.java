@@ -1,9 +1,12 @@
 package cn.geminiwen.skinsprite.app;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.res.TypedArrayUtils;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.LayoutInflaterFactory;
 import android.support.v4.view.ViewCompat;
@@ -73,9 +76,16 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
     }
 
     public void setDayNightMode(@AppCompatDelegate.NightMode int nightMode) {
+        final boolean isPost21 = Build.VERSION.SDK_INT >= 21;
         getDelegate().setLocalNightMode(nightMode);
+
+        if (isPost21) {
+            applyDayNightForStatusBar();
+        }
+
         View decorView = getWindow().getDecorView();
         applyDayNightForView(decorView);
+
     }
 
     private void applyDayNightForView(View view) {
@@ -92,5 +102,15 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
                 applyDayNightForView(parent.getChildAt(i));
             }
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void applyDayNightForStatusBar() {
+        TypedArray a = getTheme().obtainStyledAttributes(0, new int[] {
+                android.R.attr.statusBarColor
+        });
+        int color = a.getColor(0, 0);
+        getWindow().setStatusBarColor(color);
+        a.recycle();
     }
 }
