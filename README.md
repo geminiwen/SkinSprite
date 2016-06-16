@@ -1,5 +1,5 @@
 # Skin Sprite
-Yet another solution for change day night mode **without recreate activity**
+Yet another solution for changing day-night mode **without recreating activity**
 Inspired by appcompat-v7
 
 ## How it works
