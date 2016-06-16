@@ -8,11 +8,15 @@ import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.LayoutInflaterFactory;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.VectorEnabledTintResources;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewParent;
+
+import cn.geminiwen.skinsprite.view.Skinnable;
 
 /**
  * Created by geminiwen on 16/6/15.
@@ -23,9 +27,9 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         LayoutInflaterCompat.setFactory(layoutInflater, this);
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -65,6 +69,26 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
                 return false;
             }
             parent = parent.getParent();
+        }
+    }
+
+    public void setDayNightMode(@AppCompatDelegate.NightMode int nightMode) {
+        getDelegate().setLocalNightMode(nightMode);
+        View decorView = getWindow().getDecorView();
+        applyDayNightForView(decorView);
+    }
+
+    private void applyDayNightForView(View view) {
+        if (view instanceof Skinnable) {
+            Skinnable skinnable = (Skinnable) view;
+            skinnable.applyDayNight();
+        }
+        if (view instanceof ViewGroup) {
+            ViewGroup parent = (ViewGroup)view;
+            int childCount = parent.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                applyDayNightForView(parent.getChildAt(i));
+            }
         }
     }
 }

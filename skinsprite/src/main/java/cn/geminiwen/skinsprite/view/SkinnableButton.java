@@ -23,4 +23,9 @@ public class SkinnableButton extends AppCompatButton implements Skinnable {
         super(context, attrs, defStyleAttr);
         this.mAttributeSet = attrs;
     }
+
+    @Override
+    public void applyDayNight() {
+
+    }
 }
