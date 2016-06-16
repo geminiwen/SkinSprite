@@ -20,6 +20,8 @@ We record the resource id in view constructor when inflating it, and get current
 ## Sample
 See in `app` folder.
 
+## TODO
+Implement more components like AppCompat components.
 
 # 中文说明
 虽然好想说请忽略上面的语法错误 :P
