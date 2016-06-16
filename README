@@ -1,0 +1,11 @@
+# Skin Sprite
+Yet another solution for change day night mode **without recreate activity**
+Inspired by appcompat-v7
+
+# How it works
+When we change the UiMode, we call the `SkinnableActivity` to notify every view in the hierarchy to call `applyDayNight`
+if it implements the `Skinnable` interface.
+
+We record the resource id in view constructor when inflate it, and get current resource after apply UiMode in `applyDayNight` function.
+
+# Demo
