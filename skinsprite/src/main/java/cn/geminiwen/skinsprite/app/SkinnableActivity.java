@@ -81,7 +81,9 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
     private void applyDayNightForView(View view) {
         if (view instanceof Skinnable) {
             Skinnable skinnable = (Skinnable) view;
-            skinnable.applyDayNight();
+            if (skinnable.isSkinnable()) {
+                skinnable.applyDayNight();
+            }
         }
         if (view instanceof ViewGroup) {
             ViewGroup parent = (ViewGroup)view;

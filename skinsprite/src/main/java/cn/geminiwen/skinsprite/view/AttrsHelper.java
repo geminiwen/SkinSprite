@@ -14,7 +14,7 @@ class AttrsHelper {
     }
 
     public void storeAttributeResource(TypedArray a, int[] styleable) {
-        int size = styleable.length;
+        int size = a.getIndexCount();
         for (int index = 0; index < size; index ++) {
             int resourceId = a.getResourceId(index, -1);
             int key = styleable[index];

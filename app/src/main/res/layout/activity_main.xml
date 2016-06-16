@@ -20,11 +20,12 @@
         android:background="@color/textColor"/>
 
     <Button
-        android:layout_marginTop="50dp"
         style="@style/Widget.AppCompat.Button"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="change theme"
+        android:backgroundTint="@color/colorPrimary"
         android:id="@+id/btn_change"/>
 </LinearLayout>
 

@@ -5,4 +5,7 @@ package cn.geminiwen.skinsprite.view;
  */
 public interface Skinnable {
     void applyDayNight();
+
+    boolean isSkinnable();
+    void setSkinnable(boolean skinnable);
 }
