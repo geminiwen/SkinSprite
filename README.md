@@ -12,9 +12,10 @@ We record the resource id in view constructor when inflate it, and get current r
 ![preview](https://raw.githubusercontent.com/geminiwen/skin-sprite/master/art/preview.gif)
 
 # Usage
-1. Extends your activity with `SkinnableActivity` which extends `AppCompatActivity`
-2. Call `setDayNightMode` when you want change the DayNightMode
-3. Implement `Skinnable` interface when you create your own view
+1. Define your Night Resource in `drawable-night`/`values-night` folder etc.
+2. Extends your activity with `SkinnableActivity` which extends `AppCompatActivity`
+3. Call `setDayNightMode` when you want change the DayNightMode
+4. Implement `Skinnable` interface when you create your own view
 
 # Sample
 See in `app` folder.
