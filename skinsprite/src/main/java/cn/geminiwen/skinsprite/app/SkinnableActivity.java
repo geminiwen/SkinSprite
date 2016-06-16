@@ -24,9 +24,10 @@ import cn.geminiwen.skinsprite.view.Skinnable;
 /**
  * Created by geminiwen on 16/6/15.
  */
-public class SkinnableActivity extends AppCompatActivity implements LayoutInflaterFactory {
+public class SkinnableActivity extends AppCompatActivity implements LayoutInflaterFactory{
 
     private SkinnableViewInflater mSkinnableViewInflater;
+    private SkinnableCallback mSkinnableCallback;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +50,9 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
         );
     }
 
+    public void setSkinnableCallback(SkinnableCallback skinnableCallback) {
+        mSkinnableCallback = skinnableCallback;
+    }
 
     private boolean shouldInheritContext(ViewParent parent) {
         if (parent == null) {
@@ -77,6 +81,11 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
 
     public void setDayNightMode(@AppCompatDelegate.NightMode int nightMode) {
         final boolean isPost21 = Build.VERSION.SDK_INT >= 21;
+
+        if (mSkinnableCallback != null) {
+            mSkinnableCallback.beforeApplyDayNight();
+        }
+
         getDelegate().setLocalNightMode(nightMode);
 
         if (isPost21) {
@@ -85,6 +94,10 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
 
         View decorView = getWindow().getDecorView();
         applyDayNightForView(decorView);
+
+        if (mSkinnableCallback != null) {
+            mSkinnableCallback.onApplyDayNight();
+        }
 
     }
 
@@ -112,5 +125,10 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
         int color = a.getColor(0, 0);
         getWindow().setStatusBarColor(color);
         a.recycle();
+    }
+
+    public interface SkinnableCallback {
+        void beforeApplyDayNight();
+        void onApplyDayNight();
     }
 }

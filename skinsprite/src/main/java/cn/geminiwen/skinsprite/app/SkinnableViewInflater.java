@@ -25,6 +25,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -32,7 +33,11 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 import cn.geminiwen.skinsprite.view.SkinnableButton;
+import cn.geminiwen.skinsprite.view.SkinnableFrameLayout;
+import cn.geminiwen.skinsprite.view.SkinnableLinearLayout;
+import cn.geminiwen.skinsprite.view.SkinnableRelativeLayout;
 import cn.geminiwen.skinsprite.view.SkinnableTextView;
+import cn.geminiwen.skinsprite.view.SkinnableToolbar;
 
 /**
  * Created by geminiwen on 16/6/15.
@@ -115,6 +120,18 @@ class SkinnableViewInflater {
                 break;
             case "SeekBar":
                 view = new AppCompatSeekBar(context, attrs);
+                break;
+            case "LinearLayout":
+                view = new SkinnableLinearLayout(context, attrs);
+                break;
+            case "FrameLayout":
+                view = new SkinnableFrameLayout(context, attrs);
+                break;
+            case "RelativeLayout":
+                view = new SkinnableRelativeLayout(context, attrs);
+                break;
+            case "android.support.v7.widget.Toolbar":
+                view = new SkinnableToolbar(context, attrs);
                 break;
         }
 
