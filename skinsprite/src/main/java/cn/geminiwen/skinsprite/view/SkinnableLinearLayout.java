@@ -5,15 +5,15 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
+import android.widget.LinearLayout;
 
 import cn.geminiwen.skinsprite.R;
 
 /**
  * Created by geminiwen on 16/6/16.
  */
-public class SkinnableLinearLayout extends LinearLayoutCompat implements Skinnable {
+public class SkinnableLinearLayout extends LinearLayout implements Skinnable {
     private AttrsHelper mAttrsHelper;
 
     public SkinnableLinearLayout(Context context) {
