@@ -24,7 +24,7 @@ allprojects {
 }
 
 dependencies {
-	        compile 'com.github.geminiwen:skin-sprite:0.1'
+    compile 'com.github.geminiwen:SkinSprite:v1.1'
 }
 ```
 
