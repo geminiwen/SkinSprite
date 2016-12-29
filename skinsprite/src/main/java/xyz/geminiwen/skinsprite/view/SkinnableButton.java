@@ -50,22 +50,22 @@ public class SkinnableButton extends AppCompatButton implements Skinnable {
         int key;
 
         key = R.styleable.SkinnableView[R.styleable.SkinnableView_android_background];
-        Integer backgroundResource = mAttrsHelper.getAttributeResource(key);
-        if (backgroundResource != null) {
+        int backgroundResource = mAttrsHelper.getAttributeResource(key);
+        if (backgroundResource > 0) {
             Drawable background = ContextCompat.getDrawable(context, backgroundResource);
             setBackgroundDrawable(background);
         }
 
         key = R.styleable.SkinnableView[R.styleable.SkinnableView_android_backgroundTint];
-        Integer backgroundTintResource = mAttrsHelper.getAttributeResource(key);
-        if (backgroundTintResource != null) {
+        int backgroundTintResource = mAttrsHelper.getAttributeResource(key);
+        if (backgroundTintResource > 0) {
             ColorStateList backgroundTint = ContextCompat.getColorStateList(context, backgroundTintResource);
             setSupportBackgroundTintList(backgroundTint);
         }
 
         key = R.styleable.SkinnableTextView[R.styleable.SkinnableButton_android_textColor];
-        Integer textColorResource = mAttrsHelper.getAttributeResource(key);
-        if (textColorResource != null) {
+        int textColorResource = mAttrsHelper.getAttributeResource(key);
+        if (textColorResource > 0) {
             ColorStateList color = ContextCompat.getColorStateList(context, textColorResource);
             setTextColor(color);
         }

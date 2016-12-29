@@ -9,6 +9,7 @@ import android.util.SparseIntArray;
  */
 public class AttrsHelper {
     private SparseIntArray mResourceMap;
+    private static final int VALUE_NOT_FOUND = -1;
 
     AttrsHelper() {
         this.mResourceMap = new SparseIntArray();
@@ -17,16 +18,16 @@ public class AttrsHelper {
     public void storeAttributeResource(TypedArray a, int[] styleable) {
         int size = a.getIndexCount();
         for (int index = 0; index < size; index ++) {
-            int resourceId = a.getResourceId(index, -1);
+            int resourceId = a.getResourceId(index, VALUE_NOT_FOUND);
             int key = styleable[index];
-            if (resourceId != -1) {
+            if (resourceId != VALUE_NOT_FOUND) {
                 mResourceMap.put(key, resourceId);
             }
         }
     }
 
     public Integer getAttributeResource(int attr) {
-        return mResourceMap.get(attr);
+        return mResourceMap.get(attr, VALUE_NOT_FOUND);
     }
 
 }

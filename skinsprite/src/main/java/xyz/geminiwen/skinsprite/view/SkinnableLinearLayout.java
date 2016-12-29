@@ -41,8 +41,8 @@ public class SkinnableLinearLayout extends LinearLayout implements Skinnable {
         int key;
 
         key = R.styleable.SkinnableView[R.styleable.SkinnableView_android_background];
-        Integer backgroundResource = mAttrsHelper.getAttributeResource(key);
-        if (backgroundResource != null) {
+        int backgroundResource = mAttrsHelper.getAttributeResource(key);
+        if (backgroundResource > 0) {
             Drawable background = ContextCompat.getDrawable(context, backgroundResource);
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
                 setBackgroundDrawable(background);

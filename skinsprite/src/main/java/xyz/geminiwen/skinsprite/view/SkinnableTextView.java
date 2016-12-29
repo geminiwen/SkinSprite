@@ -57,15 +57,15 @@ public class SkinnableTextView extends AppCompatTextView implements Skinnable {
         }
 
         key = R.styleable.SkinnableView[R.styleable.SkinnableView_android_backgroundTint];
-        Integer backgroundTintResource = mAttrsHelper.getAttributeResource(key);
-        if (backgroundTintResource != null) {
+        int backgroundTintResource = mAttrsHelper.getAttributeResource(key);
+        if (backgroundTintResource > 0) {
             ColorStateList backgroundTint = ContextCompat.getColorStateList(context, backgroundTintResource);
             setSupportBackgroundTintList(backgroundTint);
         }
 
         key = R.styleable.SkinnableTextView[R.styleable.SkinnableTextView_android_textColor];
-        Integer textColorResource = mAttrsHelper.getAttributeResource(key);
-        if (textColorResource != null) {
+        int textColorResource = mAttrsHelper.getAttributeResource(key);
+        if (textColorResource > 0) {
             ColorStateList color = ContextCompat.getColorStateList(context, textColorResource);
             setTextColor(color);
         }

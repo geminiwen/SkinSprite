@@ -106,13 +106,13 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
                 skinnable.applyDayNight();
             }
         }
-        if (view instanceof ViewGroup) {
-            ViewGroup parent = (ViewGroup)view;
-            int childCount = parent.getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                applyDayNightForView(parent.getChildAt(i));
-            }
-        }
+//        if (view instanceof ViewGroup) {
+//            ViewGroup parent = (ViewGroup)view;
+//            int childCount = parent.getChildCount();
+//            for (int i = 0; i < childCount; i++) {
+//                applyDayNightForView(parent.getChildAt(i));
+//            }
+//        }
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

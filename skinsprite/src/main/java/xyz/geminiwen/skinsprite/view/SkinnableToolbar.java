@@ -51,8 +51,8 @@ public class SkinnableToolbar extends Toolbar implements Skinnable {
         int key;
 
         key = R.styleable.SkinnableView[R.styleable.SkinnableView_android_background];
-        Integer backgroundResource = mAttrsHelper.getAttributeResource(key);
-        if (backgroundResource != null) {
+        int backgroundResource = mAttrsHelper.getAttributeResource(key);
+        if (backgroundResource > 0) {
             Drawable background = ContextCompat.getDrawable(context, backgroundResource);
             if (Build.VERSION.SDK_INT < 16) {
                 setBackgroundDrawable(background);
@@ -62,14 +62,14 @@ public class SkinnableToolbar extends Toolbar implements Skinnable {
         }
 
         key = R.styleable.Toolbar[R.styleable.Toolbar_titleTextAppearance];
-        Integer titleTextAppearance = mAttrsHelper.getAttributeResource(key);
-        if (titleTextAppearance != null) {
+        int titleTextAppearance = mAttrsHelper.getAttributeResource(key);
+        if (titleTextAppearance > 0) {
             setTitleTextAppearance(context, titleTextAppearance);
         }
 
         key = R.styleable.Toolbar[R.styleable.Toolbar_subtitleTextAppearance];
-        Integer subTitleTextAppearance = mAttrsHelper.getAttributeResource(key);
-        if (titleTextAppearance != null) {
+        int subTitleTextAppearance = mAttrsHelper.getAttributeResource(key);
+        if (titleTextAppearance > 0) {
             setSubtitleTextAppearance(context, subTitleTextAppearance);
         }
     }
