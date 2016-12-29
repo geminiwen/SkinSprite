@@ -7,10 +7,10 @@ import android.util.SparseIntArray;
 /**
  * Created by geminiwen on 16/6/16.
  */
-class AttrsHelper {
+public class AttrsHelper {
     private SparseIntArray mResourceMap;
 
-    public AttrsHelper() {
+    AttrsHelper() {
         this.mResourceMap = new SparseIntArray();
     }
 
