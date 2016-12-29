@@ -3,12 +3,14 @@ package xyz.geminiwen.skinsprite.app;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.LayoutInflaterFactory;
 import android.support.v4.view.ViewCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.VectorEnabledTintResources;
@@ -89,6 +91,7 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
 
         if (isPost21) {
             applyDayNightForStatusBar();
+            applyDayNightForActionBar();
         }
 
         View decorView = getWindow().getDecorView();
@@ -123,6 +126,19 @@ public class SkinnableActivity extends AppCompatActivity implements LayoutInflat
         int color = a.getColor(0, 0);
         getWindow().setStatusBarColor(color);
         a.recycle();
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void applyDayNightForActionBar() {
+        TypedArray a = getTheme().obtainStyledAttributes(0, new int[] {
+                android.R.attr.colorPrimary
+        });
+        int color = a.getColor(0, 0);
+        a.recycle();
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setBackgroundDrawable(new ColorDrawable(color));
+        }
     }
 
     public interface SkinnableCallback {

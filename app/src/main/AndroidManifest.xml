@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="xyz.geminiwen.skinsprite.demo.MainActivity"
-            android:configChanges="uiMode">
+            android:configChanges="uiMode|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

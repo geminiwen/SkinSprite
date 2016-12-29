@@ -3,6 +3,7 @@ package xyz.geminiwen.skinsprite.demo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.Log;
 import android.view.View;
 
 import xyz.geminiwen.skinsprite.app.SkinnableActivity;
@@ -39,6 +40,7 @@ public class MainActivity extends SkinnableActivity implements View.OnClickListe
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
+        Log.d("new configuration", "up");
         super.onConfigurationChanged(newConfig);
     }
 }
