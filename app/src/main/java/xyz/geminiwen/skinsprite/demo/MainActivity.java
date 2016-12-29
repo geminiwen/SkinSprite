@@ -36,4 +36,9 @@ public class MainActivity extends SkinnableActivity implements View.OnClickListe
             }
         }
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 }

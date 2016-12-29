@@ -11,7 +11,7 @@ public class AttrsHelper {
     private SparseIntArray mResourceMap;
     private static final int VALUE_NOT_FOUND = -1;
 
-    AttrsHelper() {
+    public AttrsHelper() {
         this.mResourceMap = new SparseIntArray();
     }
 
@@ -26,7 +26,7 @@ public class AttrsHelper {
         }
     }
 
-    public Integer getAttributeResource(int attr) {
+    public int getAttributeResource(int attr) {
         return mResourceMap.get(attr, VALUE_NOT_FOUND);
     }
 

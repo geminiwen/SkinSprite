@@ -3,7 +3,7 @@
 
     <declare-styleable name="SkinnableView">
         <attr name="android:background" />
-        <attr name="android:backgroundTint" />
+        <attr name="backgroundTint" />
     </declare-styleable>
 
     <declare-styleable name="SkinnableTextView">

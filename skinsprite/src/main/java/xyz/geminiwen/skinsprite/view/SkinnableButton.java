@@ -56,7 +56,7 @@ public class SkinnableButton extends AppCompatButton implements Skinnable {
             setBackgroundDrawable(background);
         }
 
-        key = R.styleable.SkinnableView[R.styleable.SkinnableView_android_backgroundTint];
+        key = R.styleable.SkinnableView[R.styleable.SkinnableView_backgroundTint];
         int backgroundTintResource = mAttrsHelper.getAttributeResource(key);
         if (backgroundTintResource > 0) {
             ColorStateList backgroundTint = ContextCompat.getColorStateList(context, backgroundTintResource);
