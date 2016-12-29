@@ -2,15 +2,16 @@ package xyz.geminiwen.skinsprite.view;
 
 import android.content.res.TypedArray;
 import android.util.SparseArray;
+import android.util.SparseIntArray;
 
 /**
  * Created by geminiwen on 16/6/16.
  */
 class AttrsHelper {
-    private SparseArray<Integer> mResourceMap;
+    private SparseIntArray mResourceMap;
 
     public AttrsHelper() {
-        this.mResourceMap = new SparseArray<>();
+        this.mResourceMap = new SparseIntArray();
     }
 
     public void storeAttributeResource(TypedArray a, int[] styleable) {

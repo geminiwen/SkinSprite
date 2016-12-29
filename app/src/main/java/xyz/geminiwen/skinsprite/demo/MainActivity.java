@@ -10,7 +10,6 @@ import xyz.geminiwen.skinsprite.view.SkinnableTextView;
 
 public class MainActivity extends SkinnableActivity implements View.OnClickListener{
 
-    SkinnableTextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,5 @@ public class MainActivity extends SkinnableActivity implements View.OnClickListe
                 // We don't know what mode we're in, assume notnight
             }
         }
-
-
     }
 }

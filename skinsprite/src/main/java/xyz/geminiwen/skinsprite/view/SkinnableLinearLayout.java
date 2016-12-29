@@ -28,10 +28,7 @@ public class SkinnableLinearLayout extends LinearLayout implements Skinnable {
         super(context, attrs, defStyleAttr);
 
         mAttrsHelper = new AttrsHelper();
-
-        TypedArray a;
-
-        a = context.obtainStyledAttributes(attrs,
+        TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.SkinnableView,
                 defStyleAttr, 0);
         mAttrsHelper.storeAttributeResource(a, R.styleable.SkinnableView);
@@ -47,7 +44,7 @@ public class SkinnableLinearLayout extends LinearLayout implements Skinnable {
         Integer backgroundResource = mAttrsHelper.getAttributeResource(key);
         if (backgroundResource != null) {
             Drawable background = ContextCompat.getDrawable(context, backgroundResource);
-            if (Build.VERSION.SDK_INT < 16) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
                 setBackgroundDrawable(background);
             } else {
                 setBackground(background);
