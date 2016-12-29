@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 
 import xyz.geminiwen.skinsprite.app.SkinnableActivity;
-import xyz.geminiwen.skinsprite.view.SkinnableTextView;
 
 public class MainActivity extends SkinnableActivity implements View.OnClickListener{
 
