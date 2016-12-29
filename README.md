@@ -3,6 +3,8 @@ Yet another solution for changing day-night mode **without recreating activity**
 
 Inspired by appcompat-v7.
 
+[![](https://jitpack.io/v/geminiwen/SkinSprite.svg)](https://jitpack.io/#geminiwen/SkinSprite)
+
 ## How it works
 When we change the UiMode,  let `SkinnableActivity` to notify every view in the hierarchy to call `applyDayNight` function
 if it implements the `Skinnable` interface.
