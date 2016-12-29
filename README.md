@@ -13,6 +13,22 @@ We record the resource id in view constructor when inflating it, and get current
 ![preview](https://raw.githubusercontent.com/geminiwen/skin-sprite/master/art/preview.gif)
 
 ## Usage
+
+Gradle:
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+
+dependencies {
+	        compile 'com.github.geminiwen:skin-sprite:0.1'
+}
+```
+
+
 1. Define your Night Resource in `drawable-night`/`values-night` folder etc.
 2. Extends your activity with `SkinnableActivity` which extends `AppCompatActivity`
 3. Call `setDayNightMode` when you want change the DayNightMode
